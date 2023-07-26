@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Random Quote - Aya Hussain </title>
+</head>
+<body>
+
+    <style>
+
+        html {
+            height: 100%;
+            background:
+                    linear-gradient(rgba(196, 102, 0, 0.6), rgba(155, 89, 182, 0.6));
+        }
+
+        body{
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column;
+        }
+
+        .quote {
+            background: #fff;
+            width: 40%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 20rem;
+            border-radius: 5px;
+            box-shadow: 2px 2px 7px 4px #a198987a;
+            flex-flow: column;
+        }
+
+        .quote p {
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            font-size: 3rem;
+            color: #fff;
+            margin: 0;
+        }
+
+        a {
+            margin: 2rem 0;
+            text-decoration: none;
+            color: #fff;
+            background: #a639cf;
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            border-radius: 5px;
+        }
+
+
+
+
+    </style>
+
+    <h3> Quote of the Day </h3>
+    <p>Press the button below to recieve a random quote!</p>
+
+    <div class="quote"></div>
+
+    <a href="#" onclick="random_quote()"> New Quote </a>
+
+    <script>
+        let arr = [
+            '<p> "Resentment is like drinking poison and waiting for your enemies to die." </p> <p> --Nelson Mandela </p>',
+            '<p>"You miss 100% of the shots you don\'t take."</p> <p> --Wayne Gretzy </p>',
+            '<p> "The best revenge is massive success." </p> <p> --Frank Sinatra </p>',
+            '<p> "Do not take life too seriously. You will not get out alive." </p> <p> --Elbert Hubbard </p>',
+            '<p> "It\'s not what happens to you, but how you react to it that matters." </p> <p> --Epictetus </p>',
+        ];
+
+        function random_quote() {
+            let random_quote = arr[(Math.floor(Math.random() * arr.length))];
+            let quote_div = document.querySelector('.quote');
+            quote_div.innerHTML = random_quote;
+        }
+        random_quote()
+    </script>
+
+</body>
+</html>
